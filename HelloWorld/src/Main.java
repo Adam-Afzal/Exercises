@@ -18,20 +18,34 @@ ArrayList<Person> people = new ArrayList<Person>();
 people.add(p);
 people.add(p2);
 
-for(Person p1: people){
-    System.out.println(p1);
+for(Person personTest: people){
+    System.out.println(personTest);
 
 }
 
-        for(Person p1: people){
-            if(p1.name.contains("Wayne")){
+        for(Person personNext: people){
+            if(personNext.name.contains("Wayne")){
 
-                System.out.println(p1);
+                System.out.println(personNext);
             }
 
         }
 
 
+Garage g1 = new Garage(12);
+Car c1 = new Car("Aygo",5,"Unleaded","1L",1200,4);
+Motorcycle m1 = new Motorcycle("Ninja",4,6,"3L",1200,2);
+g1.addCustomer(c1);
+g1.addCustomer(m1);
+
+System.out.println(g1.findCustomer("Aygo"));
+System.out.println(g1.findCustomer("Ninja"));
+ArrayList<String> prices = new ArrayList<String>();
+prices = g1.calculatePrice();
+for(String pric: prices){
+
+    System.out.println(pric);
+}
 
 
     }

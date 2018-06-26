@@ -10,26 +10,6 @@ public class Main {
 System.out.println(form.closestTo21(2, 10));
         System.out.println(form.uniqueSum(3, 1,1));
 System.out.println(form.weatherCheck(20,false));
-Person p = new Person("Bruce Wayne","25","CEO of Wayne Industries");
-Person p2 = new Person("Bruce Banner","35","GAMMA LABS");
-
-ArrayList<Person> people = new ArrayList<Person>();
-
-people.add(p);
-people.add(p2);
-
-for(Person personTest: people){
-    System.out.println(personTest);
-
-}
-
-        for(Person personNext: people){
-            if(personNext.name.contains("Wayne")){
-
-                System.out.println(personNext);
-            }
-
-        }
 
 
 Garage g1 = new Garage(12);
@@ -55,16 +35,26 @@ for(String pric: prices){
 
         int result = 0;
 
-        if((21 - a) < (21 - b)){
-
+        if(a==21){
             result = a;
-        } else if((21-a) > (21 - b)){
-
+        } else if(b==21){
             result = b;
-        } else{
-
+        }else if(a > 21 && b > 21){
             result = 0;
+        } else if(a > 21 && b<=21){
+            result = b;
+
+        } else if(a<= 21 && b>21){
+            return a;
+        } else{
+            if(21-a <  21-b){
+                return a;
+            } else{
+                return b;
+            }
         }
+
+
 return result;
 
     }

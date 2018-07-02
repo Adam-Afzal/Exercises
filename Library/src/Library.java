@@ -10,6 +10,7 @@ public class Library implements Checkout{
 
 ArrayList<Person> members = new ArrayList<>();
     ArrayList<Item> items = new ArrayList<>();
+    ArrayList<Rental> rentals = new ArrayList<>();
 
 
     public Library(String n, int mem){
@@ -53,12 +54,28 @@ ArrayList<Person> members = new ArrayList<>();
 
 
     @Override
-    public void checkoutItem() {
+    public void checkoutItem(Person p, Item i, int days) {
+
+        Rental r = new Rental(p,i,days);
+        rentals.add(r);
 
     }
 
+    public ArrayList<Rental> returnRentals(){
+
+        return this.rentals;
+    }
+
+
     @Override
-    public void checkInItem() {
+    public void checkInItem(String iName, String pName) {
+        for (Rental r: rentals){
+
+            if((r.i.getItem_name().equals(iName)) && (r.p.getName().equals(pName)) ){
+
+                rentals.remove(r);
+            }
+        }
 
     }
 
@@ -81,7 +98,12 @@ ArrayList<Person> members = new ArrayList<>();
     }
 
     @Override
-    public void updateItem() {
+    public void updateItem(String Name) {
+for(Item i: items){
 
+    i.setItem_name(Name);
+
+
+}
     }
 }

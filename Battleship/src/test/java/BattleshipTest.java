@@ -13,7 +13,7 @@ public class BattleshipTest {
 //
 //
 //      Board board = new Board();
-//              assertEquals(3,board.getBoardSize());
+//              assertEquals(5,board.getBoardSize());
 //
 //    }
 //    @Test
@@ -21,10 +21,12 @@ public class BattleshipTest {
 //
 //      //  PatrolBoat pat = new PatrolBoat(0,1,"Horizontal", 3);
 //        Player player = new Player(1);
-//        Destroyer des = new Destroyer(0,0,0,"Horizontal");
+//       Battleship b = new Battleship(0,0,"Horizontal");
+
 //        Board board = new Board(3,3);
 //        BoardHandler bh = new BoardHandler(board,player);
-//        bh.add(des);
+//        bh.add(b);
+
 //
 //
 //

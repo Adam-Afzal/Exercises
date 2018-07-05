@@ -1,6 +1,6 @@
 public class Computer {
 
-    int id;
+    int score;
 
 
 }
